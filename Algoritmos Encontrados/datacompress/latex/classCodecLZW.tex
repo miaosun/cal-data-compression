@@ -1,0 +1,65 @@
+\section{CodecLZW Class Reference}
+\label{classCodecLZW}\index{CodecLZW@{CodecLZW}}
+
+
+{\ttfamily \#include $<$Codec.h$>$}
+
+Inheritance diagram for CodecLZW:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCodecLZW}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CodecLZW} (string file)\label{classCodecLZW_a931dfb08d57e69d8b0d8e3fed626e8a0}
+
+\item 
+vector$<$ int $>$ {\bfseries comprimir} ()\label{classCodecLZW_afa8d9aa96427d373f8f8192044eb862f}
+
+\item 
+string {\bf decomprimir} ()
+\item 
+void {\bfseries setDicCompress} (map$<$ string, int $>$ d)\label{classCodecLZW_adef0bb2823fa2f9a098a25d34d812e52}
+
+\item 
+map$<$ string, int $>$ {\bfseries getDicCompress} ()\label{classCodecLZW_aa180fc37e4a838549660195f54ac1955}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries size}\label{classCodecLZW_a3caa21c252cb675da44f0615e5d05e90}
+
+\item 
+map$<$ string, int $>$ {\bfseries dictionaryCompress}\label{classCodecLZW_a2eb73d4b326fd77e89f425ed5017dc69}
+
+\item 
+map$<$ int, string $>$ {\bfseries dictionaryDecompress}\label{classCodecLZW_a6d36b72d8ab9a61a068cb3ddf8a47416}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Codec}{p.}{classCodec} que usa Lempel-\/Ziv-\/Welch 
+
+\subsection{Member Function Documentation}
+\index{CodecLZW@{CodecLZW}!decomprimir@{decomprimir}}
+\index{decomprimir@{decomprimir}!CodecLZW@{CodecLZW}}
+\subsubsection[{decomprimir}]{\setlength{\rightskip}{0pt plus 5cm}string CodecLZW::decomprimir ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCodecLZW_a645e1bd0b97bed0222c768318ee75bbc}
+Decomprime o ficheiro
+
+\begin{DoxyReturn}{Returns}
+texto do ficheiro 
+\end{DoxyReturn}
+
+
+Implements {\bf Codec} \doxyref{}{p.}{classCodec_a371347b9b3be1e237f92454244c43b38}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/Codec.h\item 
+src/CodecLZW.cpp\end{DoxyCompactItemize}

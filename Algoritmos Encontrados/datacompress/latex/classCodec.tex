@@ -1,0 +1,59 @@
+\section{Codec Class Reference}
+\label{classCodec}\index{Codec@{Codec}}
+
+
+{\ttfamily \#include $<$Codec.h$>$}
+
+Inheritance diagram for Codec:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCodec}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Codec} (string file)
+\item 
+virtual string {\bf decomprimir} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string {\bfseries filename}\label{classCodec_ad4cbcb9e265245e0ed0d3440e1913d6b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe abstracta que representa um codec. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Codec@{Codec}!Codec@{Codec}}
+\index{Codec@{Codec}!Codec@{Codec}}
+\subsubsection[{Codec}]{\setlength{\rightskip}{0pt plus 5cm}Codec::Codec (string {\em file})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCodec_a42a57ddd33236ac3e30decd6c673a4fb}
+Constructor de um codec. Recebe o nome do ficheiro a carregar para comprimir ou descomprimir
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]nome do ficheiro \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Codec@{Codec}!decomprimir@{decomprimir}}
+\index{decomprimir@{decomprimir}!Codec@{Codec}}
+\subsubsection[{decomprimir}]{\setlength{\rightskip}{0pt plus 5cm}virtual string Codec::decomprimir ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCodec_a371347b9b3be1e237f92454244c43b38}
+Decomprime o ficheiro
+
+\begin{DoxyReturn}{Returns}
+texto do ficheiro 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CodecHuffman} \doxyref{}{p.}{classCodecHuffman_a5098f57bd6bc4df66b400e1ff4154443}, and {\bf CodecLZW} \doxyref{}{p.}{classCodecLZW_a645e1bd0b97bed0222c768318ee75bbc}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/Codec.h\end{DoxyCompactItemize}
