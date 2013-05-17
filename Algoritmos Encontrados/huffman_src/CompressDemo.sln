@@ -1,21 +1,19 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompressDemo", "CompressDemo.vcproj", "{8CC4A9D3-5BDF-44D4-AB56-E94774579777}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows 8
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CompressDemo", "CompressDemo.vcxproj", "{8CC4A9D3-5BDF-44D4-AB56-E94774579777}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Debug.ActiveCfg = Debug|Win32
-		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Debug.Build.0 = Debug|Win32
-		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Release.ActiveCfg = Release|Win32
-		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Release.Build.0 = Release|Win32
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Debug|Default.ActiveCfg = Debug|Win32
+		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Debug|Default.Build.0 = Debug|Win32
+		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Release|Default.ActiveCfg = Release|Win32
+		{8CC4A9D3-5BDF-44D4-AB56-E94774579777}.Release|Default.Build.0 = Release|Win32
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

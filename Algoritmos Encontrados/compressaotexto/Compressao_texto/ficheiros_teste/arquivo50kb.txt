@@ -1,0 +1,1223 @@
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+
+
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
+
+
+Descrição: 	O programa tem como objectivo a simulação de uma calculadora.
+		A calculadora dispõe de várias funções, desde de cálculo aritmético ate
+		posições de memória. Desde já, enumeram-se algumas funcionalidades da 
+		calculadora em questão:
+			- realização de cálculos aritméticos sobre dois operandos;
+			- possibilidade de armazenamento de valores  em memoria;
+			- leitura dos valores em memoria e utilização dos mesmos para
+			  execução de calculo;
+			- apresenta as funcionalidades de limpeza de mostrador e de
+			  encerramento da calculadora (programa);
+			- todos os operandos são validados, havendo controlo sobre
+			  eventuais erros que o utilizador possa cometer;
+
+		Todos os objectivos propostos para a realização do programa foram
+		cumpridos e encontram em pleno estado de funcionamento de modo a 
+		poderem ser testados.
+
+
+TURMA/GRUPO: MIEIC5 / GRUPO7
+
+
+AUTORES:
+Rui Reis Costa Campos
+Paulo André Teixeira Pinto
+
+
+DECLARAÇÃO:
+Declaramos sob compromisso de honra que este trabalho nas suas partes constituintes
+de código é original e da nossa autoria, não correspondendo, portanto, a cópia ou 
+tradução de outros trabalhos já realizados, na FEUP ou fora dela.
+Mais declaramos que todos os documentos ou código que serviram de base ao desenvolvimento
+do trabalho descrito no relatório e seus anexos são adequadamente citados e explicitados
+na respectiva secção de referências bibliográficas e que todos as eventuais partes
+transcritas ou utilizadas de outras fontes estão devidamente assinaladas, identificadas
+e evidenciadas.
+Subscrevemos a declaração acima:
+Rui Reis Costa Campos    		Paulo André Teixeira Pinto
+Projecto:  Projecto 1 (alínea   a, b , c )
+
+Ficheiro:  main.cpp
