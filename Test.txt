@@ -1,0 +1,19 @@
+THE PROBLEM:
+As mentioned by others, the example that uses the getchar() function will not terminate after 80 keystrokes. This is because the getchar() function uses something called line buffering, ie: characters are only transmitted to the machine when a new line character (Enter) is encountered. This means that as soon as the program processes the getchar() command it will create a buffer and as you type this buffer will expand until you hit Enter. The program then loops through each character of the buffer. Thus the program will terminate for two possible reasons:
+
+1)The buffer is fewer than 80 characters in which case it will hit the end of the buffer and the break command is called since the line buffer always terminates with ¡®\n¡¯.
+
+2) The buffer is greater than 80 characters in which case the loop simply terminates without hitting the end of the buffer. (Note that in this second case the break command is never executed.)
+
+Note that case 2) will quit counting up spaces after 80 strokes, hence Alex¡¯s program only covers case 1).
+
+THE FIX:
+1) Replace getchar() with getch(). The getch() function is unbuffered.
+2) You will need to #include ¡°conio.h¡± at the top to use this function.
+3) ¡®\n¡¯ must be replaced by its ASCII value of 13 in the if statement.
+4) As a last touch you should include cout << chChar; in the body of the loop. This is because getch() does not "echo" input like getchar() does.
+
+THE DISCLAIMER:
+The conio.h library is very unstable and should be used with extreme caution. Some goes as far as to say NEVER use it. Unfortunately, the C++ standard library does not include an unbuffered function like getch. However, there are functions out there written by C++ user to mimic getch(). Here is a link to one example:
+http://www.dreamincode.net/code/snippet2415.htm
+Keep in mind this example uses "windows.h" library and it will only work for windows based apps.
