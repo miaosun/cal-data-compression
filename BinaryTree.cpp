@@ -1,0 +1,44 @@
+/*
+ * BinaryTree.cpp
+ *
+ *  Created on: 20 de Mai de 2013
+ *      Author: Reis
+ */
+
+#include "BinaryTree.h"
+
+Node::Node(): right(0), left(0) {
+	freq=0;
+	leaf=false;
+}
+
+Node::Node(unsigned char c, int f): right(0), left(0) {
+	caracter=c;
+	freq=f;
+	leaf=true;
+}
+
+Node* Node::getRight() {
+	return right;
+}
+void Node::setRight(Node* n) {
+	right = n;
+}
+Node* Node::getLeft() {
+	return left;
+}
+void Node::setLeft(Node* n) {
+	left=n;
+}
+int Node::getFreq() {
+	return freq;
+}
+unsigned char Node::getCaracter() {
+	return caracter;
+}
+bool Node::isLeaf() {
+	return leaf;
+}
+
+#include "BinaryTree.h"
+
