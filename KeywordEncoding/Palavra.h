@@ -24,6 +24,7 @@ private:
 public:
 	Palavra(){};
 	Palavra(string palavraOriginal, int ocorrencia);
+	Palavra(string palavraOriginal, string palavraFinal);
 	string getPalavraOriginal();
 	void setPalavraOriginal(string palavraOriginal);
 	int getOcorrencia();
@@ -41,6 +42,12 @@ Palavra::Palavra(string palavraOriginal, int ocorrencia)
 	this->palavraOriginal = palavraOriginal;
 	this->ocorrencia = ocorrencia;
 	this->palavraFinal = this->palavraOriginal;
+}
+
+Palavra::Palavra(string palavraOriginal, string palavraFinal)
+{
+	this->palavraOriginal = palavraOriginal;
+	this->palavraFinal = palavraFinal;
 }
 
 string Palavra::getPalavraOriginal()

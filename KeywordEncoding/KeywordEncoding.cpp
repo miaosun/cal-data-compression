@@ -11,7 +11,6 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
-#include <list>
 
 void insertionSort(vector<Palavra> &ps)
 {
@@ -91,7 +90,7 @@ vector<Palavra> preProcesamento(string filename)
 	return palavras;
 }
 
-void definirPatrao(vector<Palavra> &palavras)
+void definirPatrao(string filename, vector<Palavra> &palavras)
 {
 	vector<string> caracterEspeciais;
 	caracterEspeciais.push_back("%");
@@ -99,11 +98,15 @@ void definirPatrao(vector<Palavra> &palavras)
 	caracterEspeciais.push_back("$");
 	caracterEspeciais.push_back("&");
 	caracterEspeciais.push_back("|");
-
+	string f_patrao = filename + ".ptr";
+	ofstream patrao(f_patrao.c_str());
 	for(unsigned int i=0; i<caracterEspeciais.size(); i++)
+	{
 		palavras[i].setPalavraFinal(caracterEspeciais[i]);
-
+		patrao<<palavras[i].getPalavraOriginal()<<"|"<<palavras[i].getPalavraFinal()<<endl;
+	}
 	palavras.resize(caracterEspeciais.size());
+	patrao.close();
 }
 
 void encoding(string filename, vector<Palavra> &palavras)
@@ -112,7 +115,7 @@ void encoding(string filename, vector<Palavra> &palavras)
 	string line;
 	file.open(filename.c_str());
 	size_t pos;
-	string filename2 = filename+".cmp";
+	string filename2 = "[CMP] " + filename;
 	ofstream encod(filename2.c_str());
 
 	while(!file.eof())
@@ -135,29 +138,37 @@ void encoding(string filename, vector<Palavra> &palavras)
 	encod.close();
 }
 
-void decoding(string filename, vector<Palavra> &palavras)
+void decoding(string filename, string patrao)
 {
-	ifstream file;
-	string line;
+	ifstream file, f_ptr;
 	file.open(filename.c_str());
-	size_t pos;
-	string filename2 = filename2;
-	filename2.resize(filename.size()-4);
-	filename2 += "2";
+	f_ptr.open(patrao.c_str());
 
+	size_t pos;
+	string line;
+	vector<Palavra> ptrs;
+	while(!f_ptr.eof())
+	{
+		getline(f_ptr, line);
+		if(line.size() == 0) break;
+		size_t pos = line.find("|");
+		Palavra *p = new Palavra(line.substr(0, pos), line.substr(pos+1));
+		ptrs.push_back(*p);
+		delete(p);
+	}
+
+	string filename2 = "[DCMP] " + filename;
 	ofstream decod(filename2.c_str());
 
 	while(!file.eof())
 	{
 		getline(file, line);
-		for(unsigned int i=0; i<palavras.size(); i++)
+		for(unsigned int i=0; i<ptrs.size(); i++)
 		{
-			while((pos = line.find(palavras[i].getPalavraFinal())) != line.npos)
+			while((pos = line.find(ptrs[i].getPalavraFinal())) != line.npos)
 			{
-				size_t p_length = palavras[i].getPalavraFinal().length();
-				//if(pos>0 && line[pos-1]==' ' && line[pos+p_length]==' ')  //para evitar substituir substring da palavra
-					line.replace(pos, p_length, palavras[i].getPalavraOriginal());
-				//else break;
+				size_t p_length = ptrs[i].getPalavraFinal().length();
+				line.replace(pos, p_length, ptrs[i].getPalavraOriginal());
 			}
 		}
 		if(decod.is_open())
@@ -165,23 +176,27 @@ void decoding(string filename, vector<Palavra> &palavras)
 	}
 	file.close();
 	decod.close();
+	f_ptr.close();
 }
 
 int main()
 {
 	vector<Palavra> palavras;
-	palavras = preProcesamento("Test.txt");
-	definirPatrao(palavras);
-	cout<<"Test:\n";
-	for(unsigned int i=0; i<palavras.size(); i++)
-	{
-		cout<<"Palavra Inicial: "<<palavras[i].getPalavraOriginal()<<" "<<palavras[i].getOcorrencia()<<" Palavra Final: "<<palavras[i].getPalavraFinal()<<endl;
-	}
+	string filename, filename2, patrao;
+	cout<<"Insere o nome do ficheiro quer fazer compressao: "<<endl;
+	getline(cin, filename);
+	palavras = preProcesamento(filename);
+	definirPatrao(filename,palavras);
+
 	cout<<"Encoding..."<<endl;
-	encoding("Test.txt", palavras);
+	encoding(filename, palavras);
 	cout<<"Done encoding, file Test.txt.cmp is created"<<endl;
-	cout<<"Decoding..."<<endl;
-	decoding("Test.txt.cmp", palavras);
+
+	cout<<"Insere o nome do ficheiro quer fazer decompressao: "<<endl;
+	getline(cin, filename2);
+	cout<<"Insere o patrao desse ficheiro: "<<endl;
+	getline(cin, patrao);
+	decoding(filename2, patrao);
 	cout<<"Done decoding, file Test.txt2 is created"<<endl;
 	return 0;
 }
