@@ -11,17 +11,17 @@
 #include <string>
 #include <vector>
 #include "BinaryTree.h"
-
+#include "Palavra.h"
 using namespace std;
-
+/*
 class Codec {
 	string filename;
 public:
 	Codec(string file) {filename=file;}
 	string getFilename() {return filename;}
 };
-
-class HuffmanCode: public Codec {
+*/
+class HuffmanCode {
 private:
 	int freqs[256];
 public:
@@ -34,6 +34,23 @@ public:
 	void geraFicheiroCodificacao(vector<string> r);
 	void lerFicheiroCodificacao(string file);
 	void descomprimir();
+};
+
+class KeywordEncoding {
+private:
+	vector<Palavra> palavras;
+public:
+	KeywordEncoding(){};
+	KeywordEncoding(string filename);
+	void comprimir(string filename);
+	void descomprimir(string filename, string patrao);
+	void insertionSort(vector<Palavra> &ps);
+	void Split(vector<string> &lst, const string &input, const string &separators);
+	void preProcessamento(string filename);
+	void definirPatrao(string file);
+	void comecaComprimir(string filename);
+
+
 };
 
 #endif /* CODEC_H_ */
