@@ -33,6 +33,9 @@ void Node::setLeft(Node* n) {
 int Node::getFreq() {
 	return freq;
 }
+void Node::setFreq(int f) {
+	freq=f;
+}
 unsigned char Node::getCaracter() {
 	return caracter;
 }
