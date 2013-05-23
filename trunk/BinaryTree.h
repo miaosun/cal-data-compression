@@ -29,6 +29,7 @@ public:
 	//void addNode(Node* n);
 	void setRight(Node* r);
 	void setLeft(Node* l);
+	void setFreq(int f);
 	Node* getRight();
 	Node* getLeft();
 	int getFreq();

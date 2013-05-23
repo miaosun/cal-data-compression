@@ -5,7 +5,7 @@
  *      Author: Miao
  */
 
-#include "codec.h"
+#include "Encoder.h"
 
 #include <iostream>
 #include <vector>

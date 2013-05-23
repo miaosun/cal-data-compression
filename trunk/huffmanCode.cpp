@@ -9,7 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-#include "codec.h"
+#include "Encoder.h"
 #include "BinaryTree.h"
 
 using namespace std;
@@ -18,7 +18,8 @@ bool compareNodes(Node* n1, Node* n2) {
 	return n1->getFreq()<n2->getFreq();
 }
 
-HuffmanCode::HuffmanCode(string file) : Codec(file) {
+HuffmanCode::HuffmanCode(string file) {
+	filename=file;
 	initFreqs();
 }
 
@@ -29,11 +30,13 @@ void HuffmanCode::initFreqs() {
 
 void HuffmanCode::calculaFreqs() {
 	int c;
-	ifstream file(getFilename().c_str());
+	ifstream file(filename.c_str());
 	if(file.is_open()) {
 		while(!file.eof()) {
-			c=file.get();
-			freqs[c]++;
+			if(c!=EOF) {
+				c=file.get();
+				freqs[c]++;
+			}
 		}
 		file.close();
 	}
@@ -54,6 +57,7 @@ Node* HuffmanCode::buildTree() {
 		Node* parent= new Node();
 		parent->setLeft(btree[0]);
 		parent->setRight(btree[1]);
+		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq());
 		btree.erase(btree.begin());
 		btree.erase(btree.begin());
 		btree.push_back(parent);
@@ -76,20 +80,16 @@ void HuffmanCode::geraReprBinaria(Node* n, string s, vector<string> &v) {
 }
 
 void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
-	string f = this->getFilename();
-	int n = f.length();
-	//n=n-3;
-	cout << f << " " << n<< endl;
-	string f2 = f.substr(0,n-2);//+"huffc";
-	cout << "nome" << endl;
-	ofstream cfile(f.c_str());
-	cout << "aqui" << endl;
-	if(cfile.is_open()) {
-		for(unsigned int i=0; i<r.size(); i++) {
+	string f = filename;
+	f.resize(filename.length()-3);
+	f=f+"huffc";
+	ofstream codfile(f.c_str());
+	if(codfile.is_open()) {
+		for(unsigned int i=0; i<256; i++) {
 			if(freqs[i]>0)
-				cfile << (char)freqs[i] << r[i] << endl;
+				codfile << (char) i << "|" << r[i] << endl;
 		}
-		cfile.close();
+		codfile.close();
 	}
 	else
 		cout << "Erro na escrita do ficheiro de informação da codificacao!" << endl;
@@ -106,15 +106,21 @@ void HuffmanCode::comprimir() {
 	cout << "Repr binaria" << endl;
 	geraFicheiroCodificacao(repr);
 	cout << "Ficheiro cod" << endl;
-	string f = (getFilename().substr(0,getFilename().length()-3))+"huff";
-
+	string f = filename;
+	f.resize(filename.length()-3);
+	f=f+"huff";
 	int c;
-	ifstream file(getFilename().c_str());
-	ofstream codedfile(f.c_str());
+	ifstream file(filename.c_str());
+	ofstream codedfile(f.c_str(),ios_base::binary);
+
+
 	if(file.is_open() && codedfile.is_open()) {
 		while(!file.eof()) {
 			c=file.get();
-			codedfile << repr[c];
+			if(c!=EOF) {
+				codedfile << repr[c];
+				cout << repr[c] << endl;
+			}
 		}
 		file.close();
 		codedfile.close();

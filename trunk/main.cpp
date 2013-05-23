@@ -5,7 +5,7 @@
  *      Author: Reis
  */
 
-#include "codec.h"
+#include "Encoder.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -151,15 +151,35 @@ void menuPrincipal()
 
 
 int main() {
-	//HuffmanCode h("Test.txt");
-	//h.comprimir();
+	//	HuffmanCode h("Test.txt");
+	//	h.comprimir();
 	//	unsigned char a = 'b';
 	//	cout << (int)a << endl;
 	//	int n = h.getFilename().size();
 	//	int n2 = h.getFilename().length();
 	//	cout << n << "   " << n2 << endl;
 
-	menuPrincipal();
+	/* teste LZW
+	string filename = "abc.txt";
+	string resposta;
 
+	LZW a(filename);
+
+	a.comprimir(filename);
+
+	a.guardarDicionario();
+
+	cout << "Quer descomprimir?" << endl;
+	cin >> resposta;
+
+	if (resposta == "sim") {
+		a.lerDicionario("dicionario.txt");
+		a.descomprimir("saidaLZW.txt");
+	}
+
+	*/
+
+	//menuPrincipal();
+	cout << "Exiting..." << endl;
 	return 0;
 }
