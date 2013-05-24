@@ -34,15 +34,16 @@ private:
 	int freqs[256];
 	string filename;
 public:
-	HuffmanCode(string file);
+	HuffmanCode();
 	void initFreqs();
 	void calculaFreqs();
-	void comprimir();
+	void comprimir(string file);
 	Node* buildTree();
 	void geraReprBinaria(Node* n, string s, vector<string> &v);
 	void geraFicheiroCodificacao(vector<string> r);
+	//guarda frequencias para ser posível reconstruir a árvore para descompressao
 	void lerFicheiroCodificacao(string file);
-	void descomprimir();
+	void descomprimir(string codedfilename);
 };
 
 class KeywordEncoding {

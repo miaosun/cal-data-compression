@@ -19,10 +19,7 @@ bool compareNodes(Node* n1, Node* n2) {
 	return n1->getFreq() < n2->getFreq();
 }
 
-HuffmanCode::HuffmanCode(string file) {
-	filename=file;
-	initFreqs();
-}
+HuffmanCode::HuffmanCode() { }
 
 void HuffmanCode::initFreqs() {
 	for(unsigned int i=0; i<256; i++)
@@ -30,6 +27,7 @@ void HuffmanCode::initFreqs() {
 }
 
 void HuffmanCode::calculaFreqs() {
+	initFreqs();
 	int c;
 	ifstream file(filename.c_str());
 	if(file.is_open()) {
@@ -39,6 +37,7 @@ void HuffmanCode::calculaFreqs() {
 				freqs[c]++;
 			}
 		}
+		freqs[3]++; //caracter ETX (end of text)
 		file.close();
 	}
 }
@@ -85,8 +84,10 @@ void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
 	ofstream codfile(f.c_str());
 	if(codfile.is_open()) {
 		for(unsigned int i=0; i<256; i++) {
-			if(freqs[i]>0)
-				codfile << (char) i << "|" << r[i] << endl;
+			if(freqs[i]>0) {
+				codfile << i << endl;
+				codfile << freqs[i] << endl;
+			}
 		}
 		codfile.close();
 	}
@@ -95,7 +96,8 @@ void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
 
 }
 
-void HuffmanCode::comprimir() {
+void HuffmanCode::comprimir(string file) {
+	filename=file;
 	int c;
 	string temp;
 	vector<unsigned char> codBinaria;
@@ -122,6 +124,7 @@ void HuffmanCode::comprimir() {
 			}
 		}
 		originalFile.close();
+		temp+=repr[3]; //caracter ETX (end of text) para marcar fim do texto
 
 		//cria codificacao binaria para tdo o texto (vector com elementos de 8bits)
 		for(unsigned int i=0; i<temp.size();i=i+8) {
@@ -143,31 +146,54 @@ void HuffmanCode::comprimir() {
 		char out=codBinaria[k];
 		codedfile.write(&out,1);
 	}
-	codedfile << (char) 0;
-
+	codedfile.close();
 	cout << "Ficheiro Comprimido!" << endl;
 }
 
 void HuffmanCode::lerFicheiroCodificacao(string file) {
-
+	ifstream cfile(file.c_str());
+	int c;
+	int f;
+	if(cfile.is_open()) {
+		while(!cfile.eof()) {
+			fflush(stdin);
+			cfile >> c;
+			fflush(stdin);
+			cfile >> f;
+			freqs[c]=f;
+		}
+		cfile.close();
+	}
+	else cout << "Impossivel abrir ficheiro auxiliar com frequencias!" << endl;
 }
 
-void HuffmanCode::descomprimir() {
-	Node *root = buildTree(); //ALTERAR!!!
-	string f="testDEC.txt";
-	string cfilename="test.hf";
-	ifstream codedfile(cfilename.c_str(),ios_base::binary);
+void HuffmanCode::descomprimir(string inFilename) {
+	initFreqs();
+
+	string cfile = inFilename;
+	cfile.resize(inFilename.length()-2);
+	cfile=cfile+"hfc";
+
+	lerFicheiroCodificacao(cfile);
+	Node *root = buildTree();
+
+	string outFilename = inFilename;
+	outFilename.resize(inFilename.length()-3);
+	outFilename=outFilename+"DESC.txt";
+
+	ifstream inFile(inFilename.c_str(),ios_base::binary);
 
 	cout << "A descomprimir..." << endl;
 
-	if(codedfile.is_open()) {
-		ofstream decodedfile(f.c_str());
-		if(decodedfile.is_open()) {
+	if(inFile.is_open()) {
+		ofstream outFile(outFilename.c_str());
+		if(outFile.is_open()) {
 			Node* actualNode=root;
+			bool fim=false;
 			char codchar=-1;
 			char byte;
-			while(codchar!='\0' && !codedfile.eof()) {
-				codedfile.read(&byte,sizeof(char));
+			while(!fim && codchar!='\0' && !inFile.eof()) {
+				inFile.read(&byte,sizeof(char));
 				for(unsigned int i=0; i<8; i++) {
 					if((byte&MASK)==0x00) // caso 0, desce p filho esquerdo
 						actualNode=actualNode->getLeft();
@@ -176,19 +202,23 @@ void HuffmanCode::descomprimir() {
 							actualNode=actualNode->getRight();
 
 					if(actualNode->isLeaf()) { //se for uma folha, chegou-se a um caracter
-						decodedfile << actualNode->getCaracter();
+						if((int)actualNode->getCaracter()==3) { //caracter ETX (end of text)
+							fim=true; 							//termina transcricao
+							break;
+						}
+						outFile << actualNode->getCaracter();
 						actualNode=root;
 					}
 					byte=byte<<1;
 				}
 			}
-			decodedfile.close();
+			outFile.close();
 		}
 		else {
 			cout << "Impossivel criar ficheiro de descodificacao!" << endl;
 			return;
 		}
-		codedfile.close();
+		inFile.close();
 	}
 	else {
 		cout << "Impossivel abrir ficheiro codificado!" << endl;
