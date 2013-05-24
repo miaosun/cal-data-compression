@@ -1,22 +1,16 @@
 /*
- * BinaryTree.h
+ * TreeNode.h
  *
- *  Created on: 20 de Mai de 2013
+ *  Created on: 24 de Mai de 2013
  *      Author: Reis
  */
 
-#ifndef BINARYTREE_H_
-#define BINARYTREE_H_
+#ifndef TREENODE_H_
+#define TREENODE_H_
 
 #include <string>
 
 using namespace std;
-
-//struct caracter {
-//	unsigned char caracter;
-//	string bin;
-//};
-
 
 class Node {
 	bool leaf;
@@ -26,7 +20,6 @@ class Node {
 public:
 	Node();
 	Node(unsigned char c, int f);
-	//void addNode(Node* n);
 	void setRight(Node* r);
 	void setLeft(Node* l);
 	void setFreq(int f);
@@ -36,6 +29,4 @@ public:
 	unsigned char getCaracter();
 	bool isLeaf();
 };
-
-
-#endif /* BINARYTREE_H_ */
+#endif /* TREENODE_H_ */
