@@ -151,8 +151,8 @@ void menuPrincipal()
 
 
 int main() {
-	//	HuffmanCode h("Test.txt");
-	//	h.comprimir();
+		HuffmanCode h("abc.txt");
+		h.comprimir();
 	//	unsigned char a = 'b';
 	//	cout << (int)a << endl;
 	//	int n = h.getFilename().size();

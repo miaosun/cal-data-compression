@@ -12,6 +12,13 @@
 #include <sys/time.h>
 
 
+LZW::LZW(string filename) {
+	for (int i = 0; i < 256; i++) {
+		dicionarioCompressao[string(1, i)] = i;
+	}
+	tamanho = 256;
+}
+
 void LZW::lerDicionario(string filename) {
 
 	ifstream file;

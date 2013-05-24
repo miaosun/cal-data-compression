@@ -68,7 +68,6 @@ Node* HuffmanCode::buildTree() {
 
 void HuffmanCode::geraReprBinaria(Node* n, string s, vector<string> &v) {
 	if(n->isLeaf()) {
-		cout << "leaf" << (int)n->getCaracter() << endl;
 		v[(int)n->getCaracter()]=s;
 	}
 	else {
@@ -82,7 +81,7 @@ void HuffmanCode::geraReprBinaria(Node* n, string s, vector<string> &v) {
 void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
 	string f = filename;
 	f.resize(filename.length()-3);
-	f=f+"huffc";
+	f=f+"hfc";
 	ofstream codfile(f.c_str());
 	if(codfile.is_open()) {
 		for(unsigned int i=0; i<256; i++) {
@@ -97,34 +96,53 @@ void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
 }
 
 void HuffmanCode::comprimir() {
-	calculaFreqs();
-	Node* root = buildTree();
-	cout << "Arvore criada" << endl;
-	vector<string> repr(256,"");
-	//gera vector com as representações
-	geraReprBinaria(root,"",repr);
-	cout << "Repr binaria" << endl;
-	geraFicheiroCodificacao(repr);
-	cout << "Ficheiro cod" << endl;
-	string f = filename;
-	f.resize(filename.length()-3);
-	f=f+"huff";
 	int c;
-	ifstream file(filename.c_str());
-	ofstream codedfile(f.c_str(),ios_base::binary);
+	string temp;
+	vector<unsigned char> codBinaria;
+	vector<string> repr(256,"");
 
+	calculaFreqs(); //calcula frequencias
+	Node* root = buildTree(); //constroi árvore
 
-	if(file.is_open() && codedfile.is_open()) {
-		while(!file.eof()) {
-			c=file.get();
+	geraReprBinaria(root,"",repr); //gera vector com as representações
+	geraFicheiroCodificacao(repr); //gera ficheiro com a codificacao utilizada
+
+	//nome do ficheiro de saida com extensao .hf
+	string codedFilename = filename;
+	codedFilename.resize(filename.length()-3);
+	codedFilename=codedFilename+"hf";
+
+	//cria uma string de '0's e '1's com as representacoes dos caracteres do texto
+	ifstream originalFile(filename.c_str());
+	if(originalFile.is_open()) {
+		while(!originalFile.eof()) {
+			c=originalFile.get();
 			if(c!=EOF) {
-				codedfile << repr[c];
 				cout << repr[c] << endl;
+				temp+=repr[c];
 			}
 		}
-		file.close();
-		codedfile.close();
+		originalFile.close();
+
+		//cria codificacao binaria para tdo o texto (vector com elementos de 8bits)
+		for(unsigned int i=0; i<temp.size();i=i+8) {
+			unsigned char byte=0;
+			for(unsigned int j=0; j<8;j++) {
+				byte=byte<<1;
+				if(i+j < temp.size() && temp[i+j]=='1')
+					byte=byte|1;
+			}
+			codBinaria.push_back(byte);
+		}
 	}
+
+	//grava a informacao codificada (binaria) no ficheiro de saida
+	ofstream codedfile(codedFilename.c_str(),ios_base::binary);
+	for (unsigned int k=0;k<codBinaria.size();k++) {
+		char out=codBinaria[k];
+		codedfile.write(&out,1);
+	}
+	codedfile << (char) 0;
 }
 
 void HuffmanCode::lerFicheiroCodificacao(string file) {

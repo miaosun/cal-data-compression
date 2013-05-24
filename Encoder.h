@@ -22,7 +22,7 @@ using namespace std;
 
 
 /*
-class Codec {
+class Encoder {
 	string filename;
 public:
 	Codec(string file) {filename=file;}
@@ -66,14 +66,7 @@ protected:
 	map<string, int> dicionarioCompressao;
 	map<int, string> dicionarioDescompressao;
 public:
-	LZW(string filename) {
-
-		for (int i = 0; i < 256; i++) {
-			dicionarioCompressao[string(1, i)] = i;
-		}
-		tamanho = 256;
-	}
-
+	LZW(string filename);
 	void comprimir(string filename);
 	void descomprimir(string filename);
 	void guardarDicionario();
