@@ -16,7 +16,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-#include "BinaryTree.h"
+#include "TreeNode.h"
 #include "Palavra.h"
 using namespace std;
 
