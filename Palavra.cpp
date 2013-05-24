@@ -42,7 +42,10 @@ void Palavra::setOcorrencia(int ocorrencia)
 
 bool Palavra::operator >(Palavra &p)
 {
-	return this->ocorrencia > p.getOcorrencia();
+	if(this->ocorrencia == p.getOcorrencia())
+		return this->palavraOriginal.length() > p.getPalavraOriginal().length();
+	else
+		return this->ocorrencia > p.getOcorrencia();
 }
 
 string Palavra::getPalavraFinal()

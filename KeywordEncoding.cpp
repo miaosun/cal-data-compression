@@ -104,13 +104,18 @@ void KeywordEncoding::definirPatrao(string filename)
 	caracterEspeciais.push_back("|");
 	string f_patrao = filename + ".key";
 	ofstream patrao(f_patrao.c_str());
-	for(unsigned int i=0; i<caracterEspeciais.size(); i++)
+
+	size_t n_carEspecial = caracterEspeciais.size();
+	for(unsigned int i=0; i<n_carEspecial; i++)
 	{
+		while(palavras.size() > n_carEspecial && palavras[0].getPalavraOriginal().length() < 2)
+			palavras.erase(palavras.begin());
+
 		palavras[i].setPalavraFinal(caracterEspeciais[i]);
 		patrao<<palavras[i].getPalavraOriginal()<<"|"<<palavras[i].getPalavraFinal()<<endl;
 	}
-	palavras.resize(caracterEspeciais.size());
-	patrao.close();
+	if(palavras.size() > n_carEspecial)
+		palavras.resize(n_carEspecial);
 }
 
 void KeywordEncoding::comprimir(string filename)
@@ -219,7 +224,7 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 		return;
 	}
 
-	cout<<"feita descompressao, ficheiro "<<filename2<<" foi creado"<<endl;
+	cout<<"feita descompressao, ficheiro "<<filename2<<" foi creado"<<endl<<endl;
 }
 
 void KeywordEncoding::comecaComprimir(string filename)
@@ -228,7 +233,7 @@ void KeywordEncoding::comecaComprimir(string filename)
 	definirPatrao(filename);
 	cout<<"\na comprimir..."<<endl;
 	comprimir(filename);
-	cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi creado"<<endl;
+	cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi creado"<<endl<<endl;
 }
 /*
 int main()
