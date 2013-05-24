@@ -10,7 +10,6 @@
 #include <vector>
 #include <fstream>
 #include "Encoder.h"
-#include "BinaryTree.h"
 
 #define MASK 0x80
 
@@ -45,24 +44,24 @@ void HuffmanCode::calculaFreqs() {
 }
 
 Node* HuffmanCode::buildTree() {
-	vector<Node*> btree; //vector nós
+	vector<Node*> btree; //vector nós (arvore)
 	for(unsigned int i=0; i<256; i++) {
 		if (freqs[i]>0) {
 			Node* n = new Node((unsigned char) i, freqs[i]);
 			btree.push_back(n);
 		}
 	}
-	sort(btree.begin(),btree.end(),compareNodes);
+	sort(btree.begin(),btree.end(),compareNodes); //ordena por ordem crescente de frequencias
 
 	while (btree.size() > 1) {
-		Node* parent= new Node();
+		Node* parent= new Node(); // novo nó
 		parent->setLeft(btree[0]);
 		parent->setRight(btree[1]);
-		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq()); //soma frequencias das duas folhas
+		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq()); //soma frequencias das folhas
 		btree.erase(btree.begin());
 		btree.erase(btree.begin());
-		btree.push_back(parent);
-		sort(btree.begin(),btree.end(),compareNodes);
+		btree.push_back(parent); //insere novo nó no vector
+		sort(btree.begin(),btree.end(),compareNodes); //reordena vector
 	}
 	return btree[0];
 }
