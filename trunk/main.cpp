@@ -47,7 +47,7 @@ void menuComprimir()
 	getline(cin, filename);
 	f.open(filename.c_str());
 	if(!f.is_open())
-		cout<<"Nao conseguiu abrir ficheiro "<<filename<<" !! Tenta novamente!"<<endl;
+		cout<<"Nao conseguiu abrir ficheiro "<<filename<<" !! Tenta novamente!"<<endl<<endl;
 	else
 	{
 		cout<<"\nEscolha um algoritmo:"<<endl;
@@ -60,22 +60,24 @@ void menuComprimir()
 		do{
 			cout<<"Opcao: ";
 			op = intinput();
-
-			switch(op)
-			{
-			case 1:
-				k.comecaComprimir(filename);
-				break;
-			case 2:
-				//huffman
-				break;
-			case 3:
-				//lzw
-			default:
+			if(op!=1 && op!=2 && op!=3)
 				cout<<"Invalido, tenta novamente: "<<endl;
-				break;
-			}
 		}while(op!=1 && op!=2 && op!=3);
+
+		switch(op)
+		{
+		case 1:
+			k.comecaComprimir(filename);
+			break;
+		case 2:
+			//huffman
+			break;
+		case 3:
+			//lzw
+		default:
+			cout<<"Invalido, tenta novamente: "<<endl;
+			break;
+		}
 	}
 }
 
@@ -89,7 +91,7 @@ void menuDescomprimir()
 	getline(cin, filename);
 	f.open(filename.c_str());
 	if(!f.is_open())
-		cout<<"Nao conseguiu abrir ficheiro "<<filename<<" !! Tenta novamente!"<<endl;
+		cout<<"Nao conseguiu abrir ficheiro "<<filename<<" !! Tenta novamente!"<<endl<<endl;
 
 	else
 	{
@@ -103,23 +105,25 @@ void menuDescomprimir()
 		do{
 			cout<<"Opcao: ";
 			op = intinput();
-
-			switch(op)
-			{
-			case 1:
-				patrao = filename.substr(filename.find("]")+1) + ".key";
-				k.descomprimir(filename, patrao);
-				break;
-			case 2:
-				//huffman
-				break;
-			case 3:
-				//lzw
-			default:
+			if(op!=1 && op!=2 && op!=3)
 				cout<<"Invalido, tenta novamente: "<<endl;
-				break;
-			}
 		}while(op!=1 && op!=2 && op!=3);
+
+		switch(op)
+		{
+		case 1:
+			patrao = filename.substr(filename.find("]")+1) + ".key";
+			k.descomprimir(filename, patrao);
+			break;
+		case 2:
+			//huffman
+			break;
+		case 3:
+			//lzw
+		default:
+			cout<<"Invalido, tenta novamente: "<<endl;
+			break;
+		}
 	}
 }
 
@@ -129,24 +133,31 @@ void menuPrincipal()
 	cout<<"-----------Data Compression-----------------"<<endl;
 	cout<<"1: Comprimir ficheiro"<<endl;
 	cout<<"2: Descomprimir ficheiro"<<endl<<endl;
+	cout<<"0: Sair"<<endl<<endl;
 
 	do{
 		cout<<"Opcao: ";
 		op = intinput();
-
-		switch(op)
-		{
-		case 1:
-			menuComprimir();
-			break;
-		case 2:
-			menuDescomprimir();
-			break;
-		default:
+		if(op!=0 && op!=1 && op!=2)
 			cout<<"Invalido, tenta novamente: "<<endl;
-			break;
-		}
-	}while(op!=1 && op!=2);
+	}while(op!= 0 && op!=1 && op!=2);
+
+	switch(op)
+	{
+	case 1:
+		menuComprimir();
+		menuPrincipal();
+		break;
+	case 2:
+		menuDescomprimir();
+		menuPrincipal();
+		break;
+	case 0:
+		break;
+	default:
+		cout<<"Invalido, tenta novamente: "<<endl;
+		break;
+	}
 }
 
 

@@ -180,7 +180,7 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 	}
 	else
 	{
-		cout<<"Patrao desse ficheiro nao encontrado, tenta novamente!!"<<endl;
+		cout<<"Patrao desse ficheiro nao encontrado, tenta novamente!!"<<endl<<endl;
 		return;
 	}
 
