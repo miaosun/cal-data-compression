@@ -50,12 +50,11 @@ void menuComprimir()
 		cout<<"Nao conseguiu abrir ficheiro "<<filename<<" !! Tenta novamente!"<<endl<<endl;
 	else
 	{
+		f.close();
 		cout<<"\nEscolha um algoritmo:"<<endl;
 		cout<<"\t1: Keyword Encoding"<<endl;
 		cout<<"\t2: Huffman"<<endl;
 		cout<<"\t3: Lempel每Ziv每Welch"<<endl;
-
-		KeywordEncoding k;
 
 		do{
 			cout<<"Opcao: ";
@@ -67,16 +66,26 @@ void menuComprimir()
 		switch(op)
 		{
 		case 1:
+		{
+			KeywordEncoding k;
 			k.comecaComprimir(filename);
 			break;
+		}
 		case 2:
-			//huffman
+		{
+			HuffmanCode huffman;
+			huffman.comprimir(filename);
 			break;
-		case 3:
-			//lzw
+		}
+		case 3:	//lzw
+		{
+			break;
+		}
 		default:
+		{
 			cout<<"Invalido, tenta novamente: "<<endl;
 			break;
+		}
 		}
 	}
 }
@@ -84,9 +93,9 @@ void menuComprimir()
 void menuDescomprimir()
 {
 	int op;
-	string filename, patrao;
+	string filename, padrao;
 	ifstream f;
-	cout<<"-----------Desompressao Ficheiro-----------------"<<endl<<endl;
+	cout<<"-----------Descompressao Ficheiro-----------------"<<endl<<endl;
 	cout<<"Inserir o nome do ficheiro quer descomprimir: "<<endl;
 	getline(cin, filename);
 	f.open(filename.c_str());
@@ -95,12 +104,11 @@ void menuDescomprimir()
 
 	else
 	{
+		f.close();
 		cout<<"\nEscolha um algoritmo:"<<endl;
 		cout<<"\t1: Keyword Encoding"<<endl;
 		cout<<"\t2: Huffman"<<endl;
 		cout<<"\t3: Lempel每Ziv每Welch"<<endl;
-
-		KeywordEncoding k;
 
 		do{
 			cout<<"Opcao: ";
@@ -112,14 +120,57 @@ void menuDescomprimir()
 		switch(op)
 		{
 		case 1:
-			patrao = filename.substr(filename.find("]")+1) + ".key";
-			k.descomprimir(filename, patrao);
+		{
+			KeywordEncoding k;
+			padrao = filename.substr(filename.find("]")+1) + ".key";
+			k.descomprimir(filename, padrao);
+			break;
+		}
+		case 2:
+		{
+			HuffmanCode huffman;
+			huffman.descomprimir(filename);
+			break;
+		}
+		case 3: //lzw
+		{
+			break;
+		}
+		default:
+		{
+			cout<<"Invalido, tenta novamente: "<<endl;
+			break;
+		}
+		}
+	}
+}
+
+void menuPrincipal()
+{
+	while(1) {
+		int op;
+		cout<<"-----------Data Compression-----------------"<<endl;
+		cout<<"1: Comprimir ficheiro"<<endl;
+		cout<<"2: Descomprimir ficheiro"<<endl<<endl;
+		cout<<"0: Sair"<<endl<<endl;
+
+		do{
+			cout<<"Opcao: ";
+			op = intinput();
+			if(op!=0 && op!=1 && op!=2)
+				cout<<"Invalido, tenta novamente: "<<endl;
+		}while(op!= 0 && op!=1 && op!=2);
+
+		switch(op)
+		{
+		case 1:
+			menuComprimir();
 			break;
 		case 2:
-			//huffman
+			menuDescomprimir();
 			break;
-		case 3:
-			//lzw
+		case 0:
+			exit(0);
 		default:
 			cout<<"Invalido, tenta novamente: "<<endl;
 			break;
@@ -127,49 +178,8 @@ void menuDescomprimir()
 	}
 }
 
-void menuPrincipal()
-{
-	int op;
-	cout<<"-----------Data Compression-----------------"<<endl;
-	cout<<"1: Comprimir ficheiro"<<endl;
-	cout<<"2: Descomprimir ficheiro"<<endl<<endl;
-	cout<<"0: Sair"<<endl<<endl;
-
-	do{
-		cout<<"Opcao: ";
-		op = intinput();
-		if(op!=0 && op!=1 && op!=2)
-			cout<<"Invalido, tenta novamente: "<<endl;
-	}while(op!= 0 && op!=1 && op!=2);
-
-	switch(op)
-	{
-	case 1:
-		menuComprimir();
-		menuPrincipal();
-		break;
-	case 2:
-		menuDescomprimir();
-		menuPrincipal();
-		break;
-	case 0:
-		break;
-	default:
-		cout<<"Invalido, tenta novamente: "<<endl;
-		break;
-	}
-}
-
 
 int main() {
-		//HuffmanCode h("test.txt");
-		//h.comprimir();
-		//h.descomprimir();
-	//	unsigned char a = 'b';
-	//	cout << (int)a << endl;
-	//	int n = h.getFilename().size();
-	//	int n2 = h.getFilename().length();
-	//	cout << n << "   " << n2 << endl;
 
 	/* teste LZW
 	string filename = "abc.txt";
@@ -189,7 +199,7 @@ int main() {
 		a.descomprimir("saidaLZW.txt");
 	}
 
-	*/
+	 */
 
 	menuPrincipal();
 	cout << "Exiting..." << endl;
