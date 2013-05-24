@@ -1,11 +1,11 @@
 /*
- * BinaryTree.cpp
+ * TreeNode.cpp
  *
- *  Created on: 20 de Mai de 2013
+ *  Created on: 24 de Mai de 2013
  *      Author: Reis
  */
 
-#include "BinaryTree.h"
+#include "TreeNode.h"
 
 Node::Node(): right(0), left(0) {
 	freq=0;
@@ -42,6 +42,3 @@ unsigned char Node::getCaracter() {
 bool Node::isLeaf() {
 	return leaf;
 }
-
-#include "BinaryTree.h"
-
