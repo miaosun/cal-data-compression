@@ -12,10 +12,10 @@
 
 using namespace std;
 
-struct caracter {
-	unsigned char caracter;
-	string bin;
-};
+//struct caracter {
+//	unsigned char caracter;
+//	string bin;
+//};
 
 
 class Node {
