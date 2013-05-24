@@ -12,10 +12,12 @@
 #include "Encoder.h"
 #include "BinaryTree.h"
 
+#define MASK 0x80
+
 using namespace std;
 
 bool compareNodes(Node* n1, Node* n2) {
-	return n1->getFreq()<n2->getFreq();
+	return n1->getFreq() < n2->getFreq();
 }
 
 HuffmanCode::HuffmanCode(string file) {
@@ -43,8 +45,7 @@ void HuffmanCode::calculaFreqs() {
 }
 
 Node* HuffmanCode::buildTree() {
-	//cria vector nós
-	vector<Node*> btree;
+	vector<Node*> btree; //vector nós
 	for(unsigned int i=0; i<256; i++) {
 		if (freqs[i]>0) {
 			Node* n = new Node((unsigned char) i, freqs[i]);
@@ -57,7 +58,7 @@ Node* HuffmanCode::buildTree() {
 		Node* parent= new Node();
 		parent->setLeft(btree[0]);
 		parent->setRight(btree[1]);
-		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq());
+		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq()); //soma frequencias das duas folhas
 		btree.erase(btree.begin());
 		btree.erase(btree.begin());
 		btree.push_back(parent);
@@ -118,7 +119,6 @@ void HuffmanCode::comprimir() {
 		while(!originalFile.eof()) {
 			c=originalFile.get();
 			if(c!=EOF) {
-				cout << repr[c] << endl;
 				temp+=repr[c];
 			}
 		}
@@ -136,6 +136,8 @@ void HuffmanCode::comprimir() {
 		}
 	}
 
+	cout << "A comprimir ficheiro..." << endl;
+
 	//grava a informacao codificada (binaria) no ficheiro de saida
 	ofstream codedfile(codedFilename.c_str(),ios_base::binary);
 	for (unsigned int k=0;k<codBinaria.size();k++) {
@@ -143,6 +145,8 @@ void HuffmanCode::comprimir() {
 		codedfile.write(&out,1);
 	}
 	codedfile << (char) 0;
+
+	cout << "Ficheiro Comprimido!" << endl;
 }
 
 void HuffmanCode::lerFicheiroCodificacao(string file) {
@@ -150,5 +154,46 @@ void HuffmanCode::lerFicheiroCodificacao(string file) {
 }
 
 void HuffmanCode::descomprimir() {
+	Node *root = buildTree(); //ALTERAR!!!
+	string f="testDEC.txt";
+	string cfilename="test.hf";
+	ifstream codedfile(cfilename.c_str(),ios_base::binary);
 
+	cout << "A descomprimir..." << endl;
+
+	if(codedfile.is_open()) {
+		ofstream decodedfile(f.c_str());
+		if(decodedfile.is_open()) {
+			Node* actualNode=root;
+			char codchar=-1;
+			char byte;
+			while(codchar!='\0' && !codedfile.eof()) {
+				codedfile.read(&byte,sizeof(char));
+				for(unsigned int i=0; i<8; i++) {
+					if((byte&MASK)==0x00) // caso 0, desce p filho esquerdo
+						actualNode=actualNode->getLeft();
+					else
+						if((byte&MASK)==MASK) //caso 1, desce para filho direito
+							actualNode=actualNode->getRight();
+
+					if(actualNode->isLeaf()) { //se for uma folha, chegou-se a um caracter
+						decodedfile << actualNode->getCaracter();
+						actualNode=root;
+					}
+					byte=byte<<1;
+				}
+			}
+			decodedfile.close();
+		}
+		else {
+			cout << "Impossivel criar ficheiro de descodificacao!" << endl;
+			return;
+		}
+		codedfile.close();
+	}
+	else {
+		cout << "Impossivel abrir ficheiro codificado!" << endl;
+		return;
+	}
+	cout << "Ficheiro descomprimido!" << endl;
 }
