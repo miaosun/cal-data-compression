@@ -9,6 +9,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <algorithm>
 #include "Encoder.h"
 
 #define MASK 0x80
@@ -43,7 +44,7 @@ void HuffmanCode::calculaFreqs() {
 }
 
 Node* HuffmanCode::buildTree() {
-	vector<Node*> btree; //vector nós (arvore)
+	vector<Node*> btree; //vector no (arvore)
 	for(unsigned int i=0; i<256; i++) {
 		if (freqs[i]>0) {
 			Node* n = new Node((unsigned char) i, freqs[i]);
@@ -53,13 +54,13 @@ Node* HuffmanCode::buildTree() {
 	sort(btree.begin(),btree.end(),compareNodes); //ordena por ordem crescente de frequencias
 
 	while (btree.size() > 1) {
-		Node* parent= new Node(); // novo nó
+		Node* parent= new Node(); // novo no
 		parent->setLeft(btree[0]);
 		parent->setRight(btree[1]);
 		parent->setFreq(btree[0]->getFreq()+btree[1]->getFreq()); //soma frequencias das folhas
 		btree.erase(btree.begin());
 		btree.erase(btree.begin());
-		btree.push_back(parent); //insere novo nó no vector
+		btree.push_back(parent); //insere novo no no vector
 		sort(btree.begin(),btree.end(),compareNodes); //reordena vector
 	}
 	return btree[0];
@@ -92,7 +93,7 @@ void HuffmanCode::geraFicheiroCodificacao(vector<string> r) {
 		codfile.close();
 	}
 	else
-		cout << "Erro na escrita do ficheiro de informação da codificacao!" << endl;
+		cout << "Erro na escrita do ficheiro de informacao da codificacao!" << endl;
 
 }
 
@@ -111,9 +112,9 @@ void HuffmanCode::comprimir(string file) {
 	vector<string> repr(256,"");
 
 	calculaFreqs(); //calcula frequencias
-	Node* root = buildTree(); //constroi árvore
+	Node* root = buildTree(); //constroi avore
 
-	geraReprBinaria(root,"",repr); //gera vector com as representações
+	geraReprBinaria(root,"",repr); //gera vector com as representacoes
 	geraFicheiroCodificacao(repr); //gera ficheiro com a codificacao utilizada
 
 	//nome do ficheiro de saida com extensao .hf
@@ -156,7 +157,7 @@ void HuffmanCode::comprimir(string file) {
 
 	gettimeofday(&tv2, NULL);
 
-	printf("Tempo Total de Compressão:  = %f segundos\n",
+	printf("Tempo Total de Compressï¿½o:  = %f segundos\n",
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
 }

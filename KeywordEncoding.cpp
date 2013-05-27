@@ -243,31 +243,8 @@ void KeywordEncoding::comecaComprimir(string filename)
 
 	gettimeofday(&tv2, NULL);
 
-	printf("Tempo Total de Compressão:  = %f segundos\n",
+	printf("Tempo Total de Compressao:  = %f segundos\n",
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
-/*
-int main()
-{
-	vector<Palavra> palavras;
-	string filename, filename2, patrao;
-	cout<<"Insere o nome do ficheiro quer fazer compressao: "<<endl;
-	getline(cin, filename);
-
-	palavras = preProcesamento(filename);
-	definirPatrao(filename,palavras);
-
-	cout<<"comprimir..."<<endl;
-	comprimir(filename, palavras);
-	cout<<"Done comprimir, file Test.txt.cmp is created"<<endl;
-
-	cout<<"Insere o nome do ficheiro quer fazer decompressao: "<<endl;
-	getline(cin, filename2);
-	cout<<"Insere o patrao desse ficheiro: "<<endl;
-	getline(cin, patrao);
-	descomprimir(filename2, patrao);
-	cout<<"Done descomprimir, file Test.txt2 is created"<<endl;
-	return 0;
-}*/
 
