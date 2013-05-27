@@ -44,7 +44,7 @@ public:
 	Node* buildTree();
 	void geraReprBinaria(Node* n, string s, vector<string> &v);
 	void geraFicheiroCodificacao(vector<string> r);
-	//guarda frequencias para ser posível reconstruir a árvore para descompressao
+	//guarda frequencias para ser posivel reconstruir a avore para descompressao
 	void lerFicheiroCodificacao(string file);
 	void descomprimir(string codedfilename);
 };

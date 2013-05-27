@@ -5,7 +5,10 @@ As mentioned by others, the example that uses the getchar() function will not te
 
 2) The buffer is greater than 80 characters in which case the loop simply terminates without hitting the end of the buffer. (Note that in this second case the break command is never executed.)
 
-Note that case 2) will quit counting up spaces after 80 strokes, hence Alex¡¯s program only covers case 1).
+Note that case 2) will quit counting up spaces after 80 strokes, hence Alex¡¯s program only covers case 1). a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a 
+a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a 
+a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a 
+a a a a a a a a a a a a a a a a aa a a a a a a a a a a a a a a a 
 
 THE FIX:
 1) Replace getchar() with getch(). The getch() function is unbuffered.

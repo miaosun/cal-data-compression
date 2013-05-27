@@ -134,7 +134,7 @@ void menuDescomprimir()
 		case 2:
 		{
 			if(filename.substr(filename.length()-3,3)!=".hf");
-			//lança excepção!
+			//lanca excepcao!
 			HuffmanCode huffman;
 			huffman.descomprimir(filename);
 			break;

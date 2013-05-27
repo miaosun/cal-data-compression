@@ -51,8 +51,8 @@ void LZW::lerDicionario(string filename) {
 
 void LZW::guardarDicionario() {
 
-	ofstream out1; // out1 é uma variavel.
-	out1.open("dicionario.txt"); // o arquivo que será criado;
+	ofstream out1; // out1 e uma variavel.
+	out1.open("dicionario.txt"); // o arquivo que sera criado;
 	//ofstream out1("dicionario.txt");
 
 	for (map<string, int>::iterator it = dicionarioCompressao.begin(); it != dicionarioCompressao.end(); it++) {
@@ -107,8 +107,8 @@ void LZW::descomprimir(string filename) {
 		texto += corres;
 	}
 
-	ofstream out1; // out é uma variavel.
-	out1.open("descompressaoLZW.txt"); // o arquivo que será criado;
+	ofstream out1; // out e uma variavel.
+	out1.open("descompressaoLZW.txt"); // o arquivo que sera criado;
 
 	for (unsigned int i = 0; i < texto.size(); i++)
 		out1 << texto[i];
@@ -117,7 +117,7 @@ void LZW::descomprimir(string filename) {
 
 	gettimeofday(&tv2, NULL);
 
-	printf("Tempo Total de Compressão:  = %f segundos\n",(double) (tv2.tv_usec - tv1.tv_usec) / 1000000	+ (double) (tv2.tv_sec - tv1.tv_sec));
+	printf("Tempo Total de Compressao:  = %f segundos\n",(double) (tv2.tv_usec - tv1.tv_usec) / 1000000	+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
 
 
@@ -185,7 +185,7 @@ void LZW::comprimir(string filename) {
 
 	gettimeofday(&tv2, NULL);
 
-	printf("Tempo Total de Compressão:  = %f segundos\n",
+	printf("Tempo Total de Compressao:  = %f segundos\n",
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
 
