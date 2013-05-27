@@ -120,83 +120,7 @@ void LZW::descomprimir(string filename) {
 	printf("Tempo Total de Compressão:  = %f segundos\n",(double) (tv2.tv_usec - tv1.tv_usec) / 1000000	+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
 
-void LZW::comprimir(string filename) {
 
-	struct timeval tv1, tv2;
-	gettimeofday(&tv1, NULL);
-
-	vector<int> codigosAscii;
-	int tamanhaDicionario = 256;
-	fstream file;
-	string ficheiro = "";
-	string temp;
-
-	file.open(filename.c_str());
-
-	while (getline(file, temp)) {
-		ficheiro += temp;
-		ficheiro += '\n';
-	}
-	file.close();
-
-	ficheiro += '\0';
-
-	//entry contem o ficheiro todo
-	string w;
-	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end(); ++it) { //percorrer a string q contem o txt
-		char c = *it; //caracter da string a analisar
-		string wc = w + c; // combinacoes
-		cout << "string wc= " << wc << endl;
-		cout << "size dic: " << dicionarioCompressao.size() << endl;
-
-		if (dicionarioCompressao.count(wc)) { //se existir no dicionario o wc...
-			cout << "entrou no if: " << wc << "                "
-					<< dicionarioCompressao.count(wc) << endl;
-			w = wc;
-
-			cout << "vai sair do if: " << w << endl;
-		} else {
-			cout << "teste3: " << w << endl;
-			cout << "teste3: " << dicionarioCompressao[w] << endl;
-			cout << "dictSize: " << tamanhaDicionario << endl;
-			cout << "-------------------------------- INICIO" << endl;
-			cout << "teste: " << dicionarioCompressao[w] << endl;
-			cout << "teste: " << w << endl;
-			codigosAscii.push_back(dicionarioCompressao[w]);
-			cout << "--------------------------------FIM" << endl;
-			dicionarioCompressao[wc] = tamanhaDicionario;
-			tamanhaDicionario += 1;
-			w = string(1, c);
-		}
-	}
-
-	if (!w.empty())
-		codigosAscii.push_back(dicionarioCompressao[w]);
-
-	tamanho = tamanhaDicionario;
-
-	//dicionarioLZW = getDicCompress();
-
-	string filenameOut = "saidaLZW.txt";
-	ofstream out(filenameOut.c_str(), ios_base::binary);
-
-	for (unsigned int i = 0; i < codigosAscii.size(); i++) {
-
-		unsigned short int intAscii = codigosAscii[i];
-		out.write((char *) &intAscii, sizeof(short int));
-	}
-	out << (char) 0;
-
-	gettimeofday(&tv2, NULL);
-
-	printf("Tempo Total de Compressão:  = %f segundos\n",
-			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
-					+ (double) (tv2.tv_sec - tv1.tv_sec));
-
-	out.close();
-
-}
-/*
 void LZW::comprimir(string filename) {
 
 	system("cls");
@@ -223,34 +147,6 @@ void LZW::comprimir(string filename) {
 
 	//entry contem o ficheiro tdo
 	string w;
-	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end();
-			++it) { //percorrer a string q contem o txt
-		char c = *it; //caracter da string a analisar
-		string wc = w + c; // combinacoes
-		cout << "string wc= " << wc << endl;
-		cout << "size dic: " << dicionarioCompressao.size() << endl;
-
-		if (dicionarioCompressao.count(wc)) { //se existir no dicionario o wc...
-			cout << "entrou no if: " << wc << "                "
-					<< dicionarioCompressao.count(wc) << endl;
-			w = wc;
-
-			cout << "vai sair do if: " << w << endl;
-		} else {
-			cout << "teste3: " << w << endl;
-			cout << "teste3: " << dicionarioCompressao[w] << endl;
-			cout << "dictSize: " << tamanhaDicionario << endl;
-			cout << "-------------------------------- INICIO" << endl;
-			cout << "teste: " << dicionarioCompressao[w] << endl;
-			cout << "teste: " << w << endl;
-			codigosAscii.push_back(dicionarioCompressao[w]);
-			cout << "--------------------------------FIM" << endl;
-			dicionarioCompressao[wc] = tamanhaDicionario;
-			tamanhaDicionario += 1;
-			w = string(1, c);
-		}
-	}
-	/*
 	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end(); ++it) { //percorrer a string q contem o txt
 		char c = *it; //caracter da string a analisar
 		if(c!='\n') {
@@ -259,6 +155,7 @@ void LZW::comprimir(string filename) {
 			if (dicionarioCompressao.count(wc)) { //se existir no dicionario o wc...
 				w = wc;
 			} else {
+				codigosAscii.push_back(dicionarioCompressao[w]);
 				dicionarioCompressao[wc] = tamanhaDicionario;
 				tamanhaDicionario += 1;
 				w = string(1, c);
@@ -268,7 +165,7 @@ void LZW::comprimir(string filename) {
 			w="";
 		}
 	}
-	/////
+
 	if (!w.empty())
 		codigosAscii.push_back(dicionarioCompressao[w]);
 
@@ -295,7 +192,7 @@ void LZW::comprimir(string filename) {
 	out.close();
 
 }
-*/
+
 
 /*
 int main() {
