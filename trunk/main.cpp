@@ -79,6 +79,11 @@ void menuComprimir()
 		}
 		case 3:	//lzw
 		{
+			LZW lzw;
+			lzw.comprimir(filename);
+			lzw.descomprimir("saidaLZW.txt");
+//			lzw.guardarDicionario();
+//			lzw.lerDicionario("dicionario.txt");
 			break;
 		}
 		default:
@@ -128,12 +133,16 @@ void menuDescomprimir()
 		}
 		case 2:
 		{
+			if(filename.substr(filename.length()-3,3)!=".hf");
+			//lança excepção!
 			HuffmanCode huffman;
 			huffman.descomprimir(filename);
 			break;
 		}
 		case 3: //lzw
 		{
+			LZW lzw;
+			lzw.descomprimir(filename);
 			break;
 		}
 		default:
@@ -200,7 +209,6 @@ int main() {
 	}
 
 	 */
-
 	menuPrincipal();
 	cout << "Exiting..." << endl;
 	return 0;

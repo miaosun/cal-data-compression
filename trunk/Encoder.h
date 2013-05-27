@@ -15,9 +15,11 @@
 #include <map>
 #include <iostream>
 #include <stdlib.h>
+#include <sys/time.h>
 
 #include "TreeNode.h"
 #include "Palavra.h"
+
 using namespace std;
 
 
@@ -29,6 +31,7 @@ public:
 	string getFilename() {return filename;}
 };
  */
+
 class HuffmanCode {
 private:
 	int freqs[256];
@@ -46,6 +49,7 @@ public:
 	void descomprimir(string codedfilename);
 };
 
+
 class KeywordEncoding {
 private:
 	vector<Palavra> palavras;
@@ -57,27 +61,35 @@ public:
 	void insertionSort(vector<Palavra> &ps);
 	void Split(vector<string> &lst, const string &input, const string &separators);
 	void preProcessamento(string filename);
-	void definirPatrao(string file);
+	void definirPadrao(string file);
 	void comecaComprimir(string filename);
 };
 
-class LZW {
-protected:
+
+class LZW
+{
+public:
 	int tamanho;
 	map<string, int> dicionarioCompressao;
 	map<int, string> dicionarioDescompressao;
 public:
-	LZW(string filename);
+	LZW() {
+
+		for (int i = 0; i < 256; i++) {
+			dicionarioCompressao[string(1, i)] = i;
+		}
+		tamanho = 256;
+	}
 	void comprimir(string filename);
 	void descomprimir(string filename);
 	void guardarDicionario();
 	void lerDicionario(string filename);
-	/*void setDicCompress(map<string, int> d) {
+	void setDicCompressao(map<string, int> d) {
 		dicionarioCompressao = d;
-	}*/
-	/*map<string, int> getDicCompress() {
+	}
+	map<string, int> getDicCompressao() {
 		return dicionarioCompressao;
-	}*/
+	}
 };
 
 

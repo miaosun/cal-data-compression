@@ -15,7 +15,7 @@
 KeywordEncoding::KeywordEncoding(string filename)
 {
 	preProcessamento(filename);
-	definirPatrao(filename);
+	definirPadrao(filename);
 }
 
 void KeywordEncoding::insertionSort(vector<Palavra> &ps)
@@ -94,7 +94,7 @@ void KeywordEncoding::preProcessamento(string filename)
 	insertionSort(palavras);
 }
 
-void KeywordEncoding::definirPatrao(string filename)
+void KeywordEncoding::definirPadrao(string filename)
 {
 	vector<string> caracterEspeciais;
 	caracterEspeciais.push_back("%");
@@ -229,11 +229,23 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 
 void KeywordEncoding::comecaComprimir(string filename)
 {
+	struct timeval tv1, tv2;
+	gettimeofday(&tv1, NULL);
+
+	system("cls");
+	cout << "A comprimir ficheiro..." << endl;
+
 	preProcessamento(filename);
-	definirPatrao(filename);
-	cout<<"\na comprimir..."<<endl;
+	definirPadrao(filename);
 	comprimir(filename);
-	cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi creado"<<endl<<endl;
+
+	cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi criado"<<endl<<endl;
+
+	gettimeofday(&tv2, NULL);
+
+	printf("Tempo Total de Compressão:  = %f segundos\n",
+			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
+			+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
 /*
 int main()

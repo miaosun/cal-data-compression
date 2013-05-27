@@ -7,41 +7,45 @@
 
 #include "Encoder.h"
 
-#include <iostream>
-#include <stdlib.h>
-#include <sys/time.h>
-
-
-LZW::LZW(string filename) {
-	for (int i = 0; i < 256; i++) {
-		dicionarioCompressao[string(1, i)] = i;
-	}
-	tamanho = 256;
-}
+map<string, int> dicionarioLZW;
 
 void LZW::lerDicionario(string filename) {
 
 	ifstream file;
-	file.open(filename.c_str());
+	file.open(filename.c_str(), ios_base::binary);
 	vector<unsigned int> aux;
 	string temp1, temp2;
-	vector<string> vetor;
+	//vector<string> vetor;
 	typedef pair<int, string> Int_Pair;
 
 	while (!file.eof()) {
 		getline(file, temp1);
-
-		vetor.push_back(temp1);
-
+		getline(file, temp2);
+		cout<<"temp1 "<<temp1;
+		cout<<"temp2"<<temp2;
+		//vetor.push_back(temp1);
+		dicionarioDescompressao.insert(std::pair<int, string>(atoi(temp1.c_str()),temp2));
 	}
+
 	file.close();
 
-	for (unsigned int i = 0; i < vetor.size() - 1; i = i + 2) {
-		dicionarioDescompressao.insert(
-				std::pair<int, string>(atoi(vetor[i].c_str()), vetor[i + 1])); // max efficiency inserting
+	//for(int i=0; i<vetor.size();i++)
+	//	cout<<"cenaaas"<<vetor[i]<<endl;
 
-		cout << "sol----" << vetor[i] << endl;
+	//	for (unsigned int i = 0; i < vetor.size() - 1; i = i + 2) {
+	//		dicionarioDescompressao.insert(std::pair<int, string>(atoi(vetor[i].c_str()), vetor[i + 1])); // max efficiency inserting
+	//	}
+
+	map<int, string>::iterator pos;
+
+	for (pos = dicionarioDescompressao.begin();	pos != dicionarioDescompressao.end(); ++pos)
+	{
+		cout << endl;
+		cout << "Key dicionarioDescompressao: " << pos->first << endl;
+		cout << "Value dicionarioDescompressao:" << pos->second << endl;
 	}
+
+	cout<<dicionarioCompressao.size();
 
 }
 
@@ -49,46 +53,54 @@ void LZW::guardarDicionario() {
 
 	ofstream out1; // out1 é uma variavel.
 	out1.open("dicionario.txt"); // o arquivo que será criado;
+	//ofstream out1("dicionario.txt");
 
-	for (map<string, int>::iterator it = dicionarioCompressao.begin();
-			it != dicionarioCompressao.end(); it++) {
+	for (map<string, int>::iterator it = dicionarioCompressao.begin(); it != dicionarioCompressao.end(); it++) {
 		cout << (*it).first.c_str() << "-----------" << (*it).second << endl;
-		if ((*it).second != 26) {
+
+		//if ((*it).second != 26) {
+		if(((*it).second == 10 || (*it).second == 13)) {
+			out1 << (*it).second << endl;
+			out1 << (*it).first.c_str();
+		}
+		else {
 			out1 << (*it).second << endl;
 			out1 << (*it).first.c_str() << endl;
 		}
 
+		//}
 	}
-
 	out1.close();
 }
 
 void LZW::descomprimir(string filename) {
 
+	dicionarioLZW = getDicCompressao();
+
+	cout<<dicionarioDescompressao.size();
+
 	struct timeval tv1, tv2;
 	gettimeofday(&tv1, NULL);
 
 	ifstream file;
-	file.open(filename.c_str());
+	file.open(filename.c_str(), ios_base::binary);
 
 	vector<unsigned int> aux;
 	string temp1;
-	int a;
 	string texto = "";
 
-	while (getline(file, temp1)) {
+	unsigned short int tmp = 1;
 
-		a = atoi(temp1.c_str());
-		aux.push_back(a);
+	while (tmp != 0) {
+		file.read((char*) &tmp, sizeof(short int));
+		aux.push_back(tmp);
 	}
 
-	for (map<string, int>::iterator it = dicionarioCompressao.begin();
-			it != dicionarioCompressao.end(); it++) {
+	for (map<string, int>::iterator it = dicionarioCompressao.begin(); it != dicionarioCompressao.end(); it++) {
 		dicionarioDescompressao[(*it).second] = (*it).first;
 	}
 
 	for (vector<unsigned int>::iterator it = aux.begin(); it != aux.end(); it++)
-
 	{
 		int index = (*it);
 		string corres = dicionarioDescompressao[index];
@@ -104,9 +116,8 @@ void LZW::descomprimir(string filename) {
 	out1.close();
 
 	gettimeofday(&tv2, NULL);
-	printf("Tempo Total de Compressão:  = %f segundos\n",
-			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
-			+ (double) (tv2.tv_sec - tv1.tv_sec));
+
+	printf("Tempo Total de Compressão:  = %f segundos\n",(double) (tv2.tv_usec - tv1.tv_usec) / 1000000	+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
 
 void LZW::comprimir(string filename) {
@@ -132,8 +143,7 @@ void LZW::comprimir(string filename) {
 
 	//entry contem o ficheiro todo
 	string w;
-	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end();
-			++it) { //percorrer a string q contem o txt
+	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end(); ++it) { //percorrer a string q contem o txt
 		char c = *it; //caracter da string a analisar
 		string wc = w + c; // combinacoes
 		cout << "string wc= " << wc << endl;
@@ -165,20 +175,127 @@ void LZW::comprimir(string filename) {
 
 	tamanho = tamanhaDicionario;
 
-	ofstream out; // out é uma variavel.
-	out.open("saidaLZW.txt"); // o arquivo que será criado;
+	//dicionarioLZW = getDicCompress();
 
-	for (unsigned int i = 0; i < codigosAscii.size(); i++)
-		out << codigosAscii[i] << endl;
+	string filenameOut = "saidaLZW.txt";
+	ofstream out(filenameOut.c_str(), ios_base::binary);
+
+	for (unsigned int i = 0; i < codigosAscii.size(); i++) {
+
+		unsigned short int intAscii = codigosAscii[i];
+		out.write((char *) &intAscii, sizeof(short int));
+	}
+	out << (char) 0;
+
+	gettimeofday(&tv2, NULL);
+
+	printf("Tempo Total de Compressão:  = %f segundos\n",
+			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
+					+ (double) (tv2.tv_sec - tv1.tv_sec));
 
 	out.close();
+
+}
+/*
+void LZW::comprimir(string filename) {
+
+	system("cls");
+	cout << "A comprimir ficheiro..." << endl;
+
+	struct timeval tv1, tv2;
+	gettimeofday(&tv1, NULL);
+
+	vector<int> codigosAscii;
+	int tamanhaDicionario = 256;
+	fstream file;
+	string ficheiro = "";
+	string temp;
+
+	file.open(filename.c_str());
+
+	while (getline(file, temp)) {
+		ficheiro += temp;
+		ficheiro += '\n';
+	}
+	file.close();
+
+	ficheiro += '\0';
+
+	//entry contem o ficheiro tdo
+	string w;
+	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end();
+			++it) { //percorrer a string q contem o txt
+		char c = *it; //caracter da string a analisar
+		string wc = w + c; // combinacoes
+		cout << "string wc= " << wc << endl;
+		cout << "size dic: " << dicionarioCompressao.size() << endl;
+
+		if (dicionarioCompressao.count(wc)) { //se existir no dicionario o wc...
+			cout << "entrou no if: " << wc << "                "
+					<< dicionarioCompressao.count(wc) << endl;
+			w = wc;
+
+			cout << "vai sair do if: " << w << endl;
+		} else {
+			cout << "teste3: " << w << endl;
+			cout << "teste3: " << dicionarioCompressao[w] << endl;
+			cout << "dictSize: " << tamanhaDicionario << endl;
+			cout << "-------------------------------- INICIO" << endl;
+			cout << "teste: " << dicionarioCompressao[w] << endl;
+			cout << "teste: " << w << endl;
+			codigosAscii.push_back(dicionarioCompressao[w]);
+			cout << "--------------------------------FIM" << endl;
+			dicionarioCompressao[wc] = tamanhaDicionario;
+			tamanhaDicionario += 1;
+			w = string(1, c);
+		}
+	}
+	/*
+	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end(); ++it) { //percorrer a string q contem o txt
+		char c = *it; //caracter da string a analisar
+		if(c!='\n') {
+			string wc = w + c; // combinacoes
+
+			if (dicionarioCompressao.count(wc)) { //se existir no dicionario o wc...
+				w = wc;
+			} else {
+				dicionarioCompressao[wc] = tamanhaDicionario;
+				tamanhaDicionario += 1;
+				w = string(1, c);
+			}
+		}
+		else {
+			w="";
+		}
+	}
+	/////
+	if (!w.empty())
+		codigosAscii.push_back(dicionarioCompressao[w]);
+
+	tamanho = tamanhaDicionario;
+
+	//dicionarioLZW = getDicCompress();
+
+	string filenameOut = "saidaLZW.txt";
+	ofstream out(filenameOut.c_str(), ios_base::binary);
+
+	for (unsigned int i = 0; i < codigosAscii.size(); i++) {
+
+		unsigned short int intAscii = codigosAscii[i];
+		out.write((char *) &intAscii, sizeof(short int));
+	}
+	out << (char) 0;
 
 	gettimeofday(&tv2, NULL);
 
 	printf("Tempo Total de Compressão:  = %f segundos\n",
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
+
+	out.close();
+
 }
+*/
 
 /*
 int main() {
@@ -188,18 +305,25 @@ int main() {
 
 	LZW a(filename);
 
-	a.comprimir(filename);
 
-	a.guardarDicionario();
+
+	//a.comprimir(filename);
+
+	//dicionarioLZW = a.getDicCompressao();
+
+	//a.guardarDicionario();
 
 	cout << "Quer descomprimir?" << endl;
 	cin >> resposta;
 
 	if (resposta == "sim") {
+		LZW b(filename);
 		a.lerDicionario("dicionario.txt");
+		a.setDicCompressao(dicionarioLZW);
 		a.descomprimir("saidaLZW.txt");
 	}
 
 	return 0;
 }
+
  */
