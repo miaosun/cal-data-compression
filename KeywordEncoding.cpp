@@ -1,8 +1,11 @@
 /*
- * KeywordEncoding.cpp
- *
- *  Created on: 17 de Mai de 2013
- *      Author: Miao
+ * 	FICHEIRO: KeywordEncoding.cpp
+ *	PROJECTO: Projecto2 CAL - Data Compression (T2)
+ *  TURMA / GRUPO: Turma 2MIEIC2 / Grupo D
+ *  AUTORES:
+ *  - Jorge Miguel Reis
+ *  - Miao Sun
+ *  - Vitor Castro
  */
 
 #include "Encoder.h"
@@ -102,16 +105,27 @@ void KeywordEncoding::definirPadrao(string filename)
 	caracterEspeciais.push_back("$");
 	caracterEspeciais.push_back("&");
 	caracterEspeciais.push_back("|");
+	caracterEspeciais.push_back("§");
+	caracterEspeciais.push_back("\\");
+	caracterEspeciais.push_back("£");
+	caracterEspeciais.push_back("_");
+	caracterEspeciais.push_back("^");
+	caracterEspeciais.push_back("`");
+	caracterEspeciais.push_back("´");
+	caracterEspeciais.push_back("~");
+	caracterEspeciais.push_back("¨");
 	string f_patrao = filename + ".key";
 	ofstream patrao(f_patrao.c_str());
 
 	size_t n_carEspecial = caracterEspeciais.size();
+	int j=0;
 	for(unsigned int i=0; i<n_carEspecial; i++)
 	{
-		while(palavras.size() > n_carEspecial && palavras[0].getPalavraOriginal().length() < 2)
-			palavras.erase(palavras.begin());
+		while(palavras.size() > n_carEspecial && palavras[j].getPalavraOriginal().length() < 4)
+			palavras.erase(palavras.begin()+j);
 
 		palavras[i].setPalavraFinal(caracterEspeciais[i]);
+		j++;
 		patrao<<palavras[i].getPalavraOriginal()<<"|"<<palavras[i].getPalavraFinal()<<endl;
 	}
 	if(palavras.size() > n_carEspecial)
@@ -124,7 +138,12 @@ void KeywordEncoding::comprimir(string filename)
 	string line;
 	file.open(filename.c_str());
 	size_t pos;
-	string filename2 = "[CMP]" + filename;
+
+	//nome do ficheiro de saida com extensao .hf
+	string filename2 = filename;
+	filename2.resize(filename.length()-3);
+	filename2=filename2+"ke";
+
 	ofstream encod(filename2.c_str());
 
 	if(file.is_open())
@@ -224,7 +243,7 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 		return;
 	}
 
-	cout<<"feita descompressao, ficheiro "<<filename2<<" foi creado"<<endl<<endl;
+	cout<<"feita descompressao, ficheiro "<<filename2<<" foi criado"<<endl<<endl;
 }
 
 void KeywordEncoding::comecaComprimir(string filename)
@@ -239,7 +258,8 @@ void KeywordEncoding::comecaComprimir(string filename)
 	definirPadrao(filename);
 	comprimir(filename);
 
-	cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi criado"<<endl<<endl;
+	//cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi criado"<<endl<<endl;
+	cout << "Ficheiro Comprimido!" << endl;
 
 	gettimeofday(&tv2, NULL);
 
@@ -247,4 +267,3 @@ void KeywordEncoding::comecaComprimir(string filename)
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
-

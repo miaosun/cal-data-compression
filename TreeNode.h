@@ -1,8 +1,11 @@
 /*
- * TreeNode.h
- *
- *  Created on: 24 de Mai de 2013
- *      Author: Reis
+ * 	FICHEIRO: TreeNode.h
+ *	PROJECTO: Projecto2 CAL - Data Compression (T2)
+ *  TURMA / GRUPO: Turma 2MIEIC2 / Grupo D
+ *  AUTORES:
+ *  - Jorge Miguel Reis
+ *  - Miao Sun
+ *  - Vitor Castro
  */
 
 #ifndef TREENODE_H_
