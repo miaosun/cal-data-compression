@@ -10,7 +10,6 @@
 
 #include "Encoder.h"
 
-//map<string, int> dicionarioLZW;
 
 void LZW::lerDicionario(string filename) {
 
