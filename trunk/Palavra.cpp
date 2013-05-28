@@ -1,8 +1,11 @@
 /*
- * Palavra.cpp
- *
- *  Created on: 21 de Mai de 2013
- *      Author: Miao
+ * 	FICHEIRO: Palavra.cpp
+ *	PROJECTO: Projecto2 CAL - Data Compression (T2)
+ *  TURMA / GRUPO: Turma 2MIEIC2 / Grupo D
+ *  AUTORES:
+ *  - Jorge Miguel Reis
+ *  - Miao Sun
+ *  - Vitor Castro
  */
 
 #include "Palavra.h"

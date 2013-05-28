@@ -1,8 +1,11 @@
 /*
- * main.cpp
- *
- *  Created on: 17 de Mai de 2013
- *      Author: Reis
+ * 	FICHEIRO: main.cpp
+ *	PROJECTO: Projecto2 CAL - Data Compression (T2)
+ *  TURMA / GRUPO: Turma 2MIEIC2 / Grupo D
+ *  AUTORES:
+ *  - Jorge Miguel Reis
+ *  - Miao Sun
+ *  - Vitor Castro
  */
 
 #include "Encoder.h"
@@ -11,6 +14,8 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+
+map<string, int> dicionarioLZW;
 
 bool isDigit(const string& s)
 {
@@ -81,9 +86,11 @@ void menuComprimir()
 		{
 			LZW lzw;
 			lzw.comprimir(filename);
-			lzw.descomprimir("saidaLZW.txt");
-//			lzw.guardarDicionario();
-//			lzw.lerDicionario("dicionario.txt");
+
+			dicionarioLZW = lzw.getDicCompressao();
+			lzw.setDicCompressao(dicionarioLZW);
+			//lzw.guardarDicionario();
+			//			lzw.lerDicionario("dicionario.txt");
 			break;
 		}
 		default:
@@ -126,6 +133,8 @@ void menuDescomprimir()
 		{
 		case 1:
 		{
+			if(filename.substr(filename.length()-3,3)!=".ke")
+				throw Exception("Ficheiro não válido!");
 			KeywordEncoding k;
 			padrao = filename.substr(filename.find("]")+1) + ".key";
 			k.descomprimir(filename, padrao);
@@ -133,17 +142,23 @@ void menuDescomprimir()
 		}
 		case 2:
 		{
-			if(filename.substr(filename.length()-3,3)!=".hf");
-			//lanca excepcao!
+			if(filename.substr(filename.length()-3,3)!=".hf")
+				throw Exception("Ficheiro não válido!");
 			HuffmanCode huffman;
 			huffman.descomprimir(filename);
 			break;
 		}
 		case 3: //lzw
 		{
+			if(filename.substr(filename.length()-3,3)!=".lzw")
+				throw Exception("Ficheiro não válido!");
 			LZW lzw;
+			//lzw.lerDicionario("dicionario.txt");
+			//dicionarioLZW = lzw.getDicCompressao();
+			lzw.setDicCompressao(dicionarioLZW);
 			lzw.descomprimir(filename);
 			break;
+
 		}
 		default:
 		{
@@ -176,7 +191,12 @@ void menuPrincipal()
 			menuComprimir();
 			break;
 		case 2:
-			menuDescomprimir();
+			try{
+				menuDescomprimir();
+			}
+			catch(Exception &e) {
+				cout << e.getMessage() << endl;
+			}
 			break;
 		case 0:
 			exit(0);
@@ -190,25 +210,6 @@ void menuPrincipal()
 
 int main() {
 
-	/* teste LZW
-	string filename = "abc.txt";
-	string resposta;
-
-	LZW a(filename);
-
-	a.comprimir(filename);
-
-	a.guardarDicionario();
-
-	cout << "Quer descomprimir?" << endl;
-	cin >> resposta;
-
-	if (resposta == "sim") {
-		a.lerDicionario("dicionario.txt");
-		a.descomprimir("saidaLZW.txt");
-	}
-
-	 */
 	menuPrincipal();
 	cout << "Exiting..." << endl;
 	return 0;

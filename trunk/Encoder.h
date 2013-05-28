@@ -1,8 +1,11 @@
 /*
- * Encoder.h
- *
- *  Created on: 23 de Mai de 2013
- *      Author: Reis
+ * 	FICHEIRO: Encoder.h
+ *	PROJECTO: Projecto2 CAL - Data Compression (T2)
+ *  TURMA / GRUPO: Turma 2MIEIC2 / Grupo D
+ *  AUTORES:
+ *  - Jorge Miguel Reis
+ *  - Miao Sun
+ *  - Vitor Castro
  */
 
 #ifndef ENCODER_H_
@@ -22,15 +25,6 @@
 
 using namespace std;
 
-
-/*
-class Encoder {
-	string filename;
-public:
-	Codec(string file) {filename=file;}
-	string getFilename() {return filename;}
-};
- */
 
 class HuffmanCode {
 private:
@@ -92,5 +86,13 @@ public:
 	}
 };
 
+
+class Exception {
+private:
+	string message;
+public:
+	Exception( string mens ){message=mens;};
+	string getMessage() { return message; };
+};
 
 #endif /* ENCODER_H_ */
