@@ -28,18 +28,25 @@ using namespace std;
 //Classe responsavel pela codificacao utilizando o algoritmo HuffmanCode
 class HuffmanCode {
 private:
-	int freqs[256];
+	int freqs[256]; //array de frequencias
 	string filename;
 public:
 	HuffmanCode();
+	//inicializa o array de frequencias, com todos os valores a 0
 	void initFreqs();
+	//calcula as frequencias dos caracteres para um dado ficheiro a comprimir
 	void calculaFreqs();
+	//processo de compressao
 	void comprimir(string file);
+	//constroi a arvore binaria de huffman
 	Node* buildTree();
+	//gera a representacao binaria de huffman para cada caacter, com base na arvore binaria criada
 	void geraReprBinaria(Node* n, string s, vector<string> &v);
+	//gera ficheiro .hfc com a respectiva representação obtida para cada caracter
 	void geraFicheiroCodificacao(vector<string> r);
 	//guarda frequencias para ser posivel reconstruir a avore para descompressao
 	void lerFicheiroCodificacao(string file);
+	//processo de descompressao
 	void descomprimir(string codedfilename);
 };
 
@@ -58,9 +65,12 @@ public:
 	//Metodo que permite descomprimir o ficheiro de texto 
 	void descomprimir(string filename, string patrao);
 	void insertionSort(vector<Palavra> &ps);
+	//Metodo auxiliar para retirar todas as palavras do texto
 	void Split(vector<string> &lst, const string &input, const string &separators);
 	void preProcessamento(string filename);
+	//Define os caracteres especiais e atribui os mesmos às palavras mais frequentes
 	void definirPadrao(string file);
+	//metodo onde se inicia o processo de compressao
 	void comecaComprimir(string filename);
 };
 
