@@ -47,8 +47,9 @@ void menuComprimir()
 	int op;
 	string filename;
 	ifstream f;
+	system("cls");
 	cout<<"-----------Compressao Ficheiro-----------------"<<endl<<endl;
-	cout<<"Inserir o nome do ficheiro quer comprimir: "<<endl;
+	cout<<"Inserir o nome do ficheiro a comprimir: "<<endl;
 	getline(cin, filename);
 	f.open(filename.c_str());
 	if(!f.is_open())
@@ -59,7 +60,7 @@ void menuComprimir()
 		cout<<"\nEscolha um algoritmo:"<<endl;
 		cout<<"\t1: Keyword Encoding"<<endl;
 		cout<<"\t2: Huffman"<<endl;
-		cout<<"\t3: Lempel每Ziv每Welch"<<endl;
+		cout<<"\t3: Lempel-Ziv-Welch"<<endl;
 
 		do{
 			cout<<"Opcao: ";
@@ -107,8 +108,9 @@ void menuDescomprimir()
 	int op;
 	string filename, padrao;
 	ifstream f;
+	system("cls");
 	cout<<"-----------Descompressao Ficheiro-----------------"<<endl<<endl;
-	cout<<"Inserir o nome do ficheiro quer descomprimir: "<<endl;
+	cout<<"Inserir o nome do ficheiro a descomprimir: "<<endl;
 	getline(cin, filename);
 	f.open(filename.c_str());
 	if(!f.is_open())
@@ -120,7 +122,7 @@ void menuDescomprimir()
 		cout<<"\nEscolha um algoritmo:"<<endl;
 		cout<<"\t1: Keyword Encoding"<<endl;
 		cout<<"\t2: Huffman"<<endl;
-		cout<<"\t3: Lempel每Ziv每Welch"<<endl;
+		cout<<"\t3: Lempel-Ziv-Welch"<<endl;
 
 		do{
 			cout<<"Opcao: ";
@@ -134,24 +136,26 @@ void menuDescomprimir()
 		case 1:
 		{
 			if(filename.substr(filename.length()-3,3)!=".ke")
-				throw Exception("Ficheiro n緌 v嫮ido!");
+				throw Exception("\nFicheiro nao valido!\n");
 			KeywordEncoding k;
-			padrao = filename.substr(filename.find("]")+1) + ".key";
+			string padrao = filename;
+			padrao.resize(filename.length()-2);
+			padrao=padrao+"txt.key";
 			k.descomprimir(filename, padrao);
 			break;
 		}
 		case 2:
 		{
 			if(filename.substr(filename.length()-3,3)!=".hf")
-				throw Exception("Ficheiro n緌 v嫮ido!");
+				throw Exception("\nFicheiro nao valido!\n");
 			HuffmanCode huffman;
 			huffman.descomprimir(filename);
 			break;
 		}
 		case 3: //lzw
 		{
-			if(filename.substr(filename.length()-3,3)!=".lzw")
-				throw Exception("Ficheiro n緌 v嫮ido!");
+			if(filename.substr(filename.length()-4,4)!=".lzw")
+				throw Exception("\nFicheiro nao valido!\n");
 			LZW lzw;
 			//lzw.lerDicionario("dicionario.txt");
 			//dicionarioLZW = lzw.getDicCompressao();
@@ -162,7 +166,7 @@ void menuDescomprimir()
 		}
 		default:
 		{
-			cout<<"Invalido, tenta novamente: "<<endl;
+			cout<<"\nInvalido, tenta novamente: "<<endl;
 			break;
 		}
 		}
@@ -173,6 +177,7 @@ void menuPrincipal()
 {
 	while(1) {
 		int op;
+		system("cls");
 		cout<<"-----------Data Compression-----------------"<<endl;
 		cout<<"1: Comprimir ficheiro"<<endl;
 		cout<<"2: Descomprimir ficheiro"<<endl<<endl;
@@ -189,6 +194,7 @@ void menuPrincipal()
 		{
 		case 1:
 			menuComprimir();
+			system("pause");
 			break;
 		case 2:
 			try{
@@ -197,6 +203,7 @@ void menuPrincipal()
 			catch(Exception &e) {
 				cout << e.getMessage() << endl;
 			}
+			system("pause");
 			break;
 		case 0:
 			exit(0);

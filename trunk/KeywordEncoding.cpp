@@ -204,13 +204,16 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 	}
 	else
 	{
-		cout<<"Patrao desse ficheiro nao encontrado, tenta novamente!!"<<endl<<endl;
+		cout<<"Padrao de codificacao desse ficheiro nao encontrado, tenta novamente!!"<<endl<<endl;
 		return;
 	}
 
-	string filename2 = "[DCMP]" + filename;
+	string filename2 = filename;
+	filename2.resize(filename.length()-2);
+	filename2= "[DCMP]"+filename2+"txt";
+
 	ofstream decod(filename2.c_str());
-	cout<<"\na descomprimir..."<<endl;
+	cout<< endl << "a descomprimir..." <<endl;
 
 	if(file.is_open())
 	{
@@ -226,7 +229,7 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 				}
 			}
 			if(decod.is_open())
-				decod<<line<<endl;
+				decod<<line;//<<endl;
 			else
 			{
 				cout<<"Nao conseguiu abrir ficheiro "<<filename2<<" !!  Tenta novamente!"<<endl;
@@ -251,15 +254,14 @@ void KeywordEncoding::comecaComprimir(string filename)
 	struct timeval tv1, tv2;
 	gettimeofday(&tv1, NULL);
 
-	system("cls");
-	cout << "A comprimir ficheiro..." << endl;
+	cout << "A comprimir ficheiro..." << endl << endl;
 
 	preProcessamento(filename);
 	definirPadrao(filename);
 	comprimir(filename);
 
 	//cout<<"feita compressao, ficheiro "<<"[CMP]"+filename<<" foi criado"<<endl<<endl;
-	cout << "Ficheiro Comprimido!" << endl;
+	cout << "Ficheiro Comprimido!" << endl << endl;
 
 	gettimeofday(&tv2, NULL);
 
