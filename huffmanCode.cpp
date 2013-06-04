@@ -192,8 +192,8 @@ void HuffmanCode::descomprimir(string inFilename) {
 	Node *root = buildTree();
 
 	string outFilename = inFilename;
-	outFilename.resize(inFilename.length()-3);
-	outFilename=outFilename+"DESC.txt";
+	outFilename.resize(inFilename.length()-2);
+	outFilename="[DCMP hf]" + outFilename + "txt";
 
 	ifstream inFile(inFilename.c_str(),ios_base::binary);
 

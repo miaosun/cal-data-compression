@@ -210,7 +210,7 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 
 	string filename2 = filename;
 	filename2.resize(filename.length()-2);
-	filename2= "[DCMP]"+filename2+"txt";
+	filename2= "[DCMP ke]"+filename2+"txt";
 
 	ofstream decod(filename2.c_str());
 	cout<< endl << "a descomprimir..." <<endl;
@@ -229,7 +229,10 @@ void KeywordEncoding::descomprimir(string filename, string patrao)
 				}
 			}
 			if(decod.is_open())
-				decod<<line;//<<endl;
+				if(file.eof())
+					break;
+				else
+					decod<<line<<endl;
 			else
 			{
 				cout<<"Nao conseguiu abrir ficheiro "<<filename2<<" !!  Tenta novamente!"<<endl;
