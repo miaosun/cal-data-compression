@@ -159,7 +159,7 @@ void HuffmanCode::comprimir(string file) {
 
 	gettimeofday(&tv2, NULL);
 
-	printf("Tempo Total de Compress�o:  = %f segundos\n",
+	printf("Tempo Total de Compressao:  = %f segundos\n",
 			(double) (tv2.tv_usec - tv1.tv_usec) / 1000000
 			+ (double) (tv2.tv_sec - tv1.tv_sec));
 }
