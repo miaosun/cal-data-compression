@@ -38,14 +38,14 @@ void LZW::guardarDicionario() {
 		//	cout << (*it).first.c_str() << "-----------" << (*it).second << endl;
 
 		//if ((*it).second != 26) {
-		if(((*it).second == 10 || (*it).second == 13)) {
-			out1 << (*it).second << endl;
-			out1 << (*it).first.c_str();
-		}
-		else {
-			out1 << (*it).second << endl;
-			out1 << (*it).first.c_str() << endl;
-		}
+		//		if(((*it).second == 10 || (*it).second == 13)) {
+		//			out1 << (*it).second << endl;
+		//			out1 << (*it).first.c_str();
+		//		}
+		//		else {
+		out1 << (*it).second << endl;
+		out1 << (*it).first.c_str() << endl;
+		//		}
 
 		//}
 	}
@@ -84,7 +84,12 @@ void LZW::descomprimir(string filename) {
 	}
 
 	ofstream out1; // out e uma variavel.
-	out1.open("descompressaoLZW.txt"); // o arquivo que sera criado;
+
+	string filename2 = filename;
+	filename2.resize(filename.length()-3);
+	filename2= "[DCMP lzw]"+filename2+"txt";
+
+	out1.open(filename2.c_str()); // o arquivo que sera criado;
 
 	for (unsigned int i = 0; i < texto.size(); i++)
 		out1 << texto[i];
@@ -121,21 +126,21 @@ void LZW::comprimir(string filename) {
 	string i;
 	for (string::const_iterator it = ficheiro.begin(); it != ficheiro.end(); ++it) { //percorrer a string q contem o txt
 		char c = *it; //caracter da string a analisar
-		if(c!='\n') {
-			string ic = i + c; // combinacoes
+		//		if(c!='\n') {
+		string ic = i + c; // combinacoes
 
-			if (dicionarioCompressao.count(ic)) { //se existir no dicionario o ic...
-				i = ic;
+		if (dicionarioCompressao.count(ic)) { //se existir no dicionario o ic...
+			i = ic;
 
-			} else {
-				codigosAscii.push_back(dicionarioCompressao[i]);
-				dicionarioCompressao[ic] = tamanhaDicionario;
-				tamanhaDicionario += 1;
-				i = string(1, c);
-			}
-		}else {
-			i="";
+		} else {
+			codigosAscii.push_back(dicionarioCompressao[i]);
+			dicionarioCompressao[ic] = tamanhaDicionario;
+			tamanhaDicionario += 1;
+			i = string(1, c);
 		}
+		//		}else {
+		//			i="";
+		//		}
 	}
 
 	if (!i.empty())
